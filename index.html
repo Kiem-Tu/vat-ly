@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Giải tích Cơ học & Điện từ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Cấu hình MathJax để render công thức LaTeX
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .math-block {
+            overflow-x: auto;
+            padding: 1rem 0;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+        .section-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+
+    <!-- Header Navigation -->
+    <nav class="bg-indigo-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 mr-3 text-indigo-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    <span class="font-bold text-xl tracking-tight">Vật Lý Giải Tích</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#phan1" class="hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Phần 1: Cơ Học</a>
+                        <a href="#phan2" class="hover:bg-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Phần 2: Điện Từ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Title & Objective -->
+        <div class="bg-white rounded-xl shadow-md p-8 mb-8 border-t-4 border-indigo-600">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-6">BÁO CÁO GIẢI TÍCH:<br>CÁC BÀI TOÁN CƠ HỌC & ĐIỆN TỪ HỌC</h1>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded text-blue-900">
+                <p><strong class="font-semibold text-blue-800">Mục tiêu:</strong> Trình bày rõ ràng bản chất vật lý và nguồn gốc toán học (vi phân, tích phân) của các bài toán động lực học chất điểm.</p>
+            </div>
+        </div>
+
+        <!-- PHẦN 1 -->
+        <h2 id="phan1" class="text-3xl font-bold text-indigo-800 mt-12 mb-6 flex items-center">
+            <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            PHẦN 1: CƠ HỌC
+        </h2>
+
+        <!-- Bài 1 -->
+        <article class="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 section-card">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Bài 1: Hình lập phương trượt trên mặt phẳng nghiêng đụng lò xo</h3>
+            
+            <p class="mb-6 text-gray-700 bg-gray-50 p-4 rounded-lg"><strong class="font-semibold text-indigo-700">Bản chất vấn đề:</strong> Chuyển động của vật chịu tác dụng của lực thế (trọng lực, lực đàn hồi) và không có ma sát. Do đó, ta sử dụng <strong>Định lý động năng</strong> dưới dạng vi phân và tích phân để giải.</p>
+
+            <div class="mb-8">
+                <h4 class="text-xl font-semibold text-gray-800 mt-4 mb-3 flex items-center"><span class="bg-indigo-100 text-indigo-800 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span> Xác định độ nén cực đại của lò xo ($x_m$)</h4>
+                <ul class="space-y-3 text-gray-700 ml-4 border-l-2 border-indigo-200 pl-4">
+                    <li><strong class="font-semibold text-gray-900">Thiết lập:</strong> Gọi $x$ là độ nén của lò xo. Theo định lí động năng, độ biến thiên động năng bằng tổng công của các ngoại lực tác dụng lên vật: $dW_d = \sum dA$.</li>
+                    <li><strong class="font-semibold text-gray-900">Khai triển:</strong>
+                        <ul class="list-disc pl-6 mt-2 space-y-2">
+                            <li>Công của trọng lực (thành phần song song mặt phẳng nghiêng): <span class="inline-block bg-gray-100 px-2 py-1 rounded">$A_P = \int_0^{L+x} mg \sin\alpha \, ds = mg(L+x)\sin\alpha$</span>.</li>
+                            <li>Công của lực đàn hồi (ngược chiều chuyển động): <span class="inline-block bg-gray-100 px-2 py-1 rounded">$A_k = \int_0^x (-ks) \, ds = -\frac{1}{2}kx^2$</span>.</li>
+                        </ul>
+                    </li>
+                    <li class="mt-4"><strong class="font-semibold text-gray-900">Phương trình:</strong> Khi lò xo nén cực đại ($x = x_m$), vận tốc triệt tiêu ($v=0$), do đó $\Delta W_d = 0 - 0 = 0$.
+                        <div class="math-block text-lg">$$ 0 = mg(L+x_m)\sin\alpha - \frac{1}{2}kx_m^2 $$</div>
+                        <div class="math-block text-lg">$$ \Rightarrow \frac{1}{2}kx_m^2 - mg\sin\alpha \cdot x_m - mgL\sin\alpha = 0 $$</div>
+                        <p class="mt-2">Giải phương trình bậc 2 theo $x_m$, lấy nghiệm dương (với $a = \frac{mg\sin\alpha}{k}$):</p>
+                        <div class="math-block text-lg bg-blue-50 p-2 rounded inline-block w-full">$$ x_m = a + \sqrt{a^2 + 2aL} $$</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold text-gray-800 mt-4 mb-3 flex items-center"><span class="bg-indigo-100 text-indigo-800 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span> Vị trí vận tốc cực đại</h4>
+                <ul class="space-y-3 text-gray-700 ml-4 border-l-2 border-indigo-200 pl-4">
+                    <li>Tại một vị trí $x$ bất kỳ, động năng là: <span class="inline-block bg-gray-100 px-2 py-1 rounded">$W_d(x) = \frac{1}{2}mv^2 = mg(L+x)\sin\alpha - \frac{1}{2}kx^2$</span>.</li>
+                    <li><strong class="font-semibold text-gray-900">Bản chất toán học:</strong> Động năng (và vận tốc) đạt cực đại khi đạo hàm bậc nhất của nó theo $x$ bằng 0 (điều kiện cực trị).
+                        <div class="math-block text-lg">$$ \frac{d(W_d)}{dx} = mg\sin\alpha - kx = 0 $$</div>
+                        <div class="math-block text-lg">$$ \Rightarrow x = \frac{mg\sin\alpha}{k} = a $$</div>
+                        <p class="text-sm italic text-gray-500 mt-2 bg-gray-50 p-3 rounded border-l-4 border-gray-300">(Về mặt vật lý, đây chính là vị trí cân bằng động, nơi hợp lực tác dụng lên vật bằng 0: $mg\sin\alpha = kx$).</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Bài 7 -->
+        <article class="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 section-card">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Bài 7 (Cơ 1): Khảo sát chuyển động của con lắc</h3>
+            
+            <p class="mb-6 text-gray-700 bg-gray-50 p-4 rounded-lg"><strong class="font-semibold text-indigo-700">Bản chất vấn đề:</strong> Phân loại quỹ đạo của con lắc dựa vào vận tốc ban đầu $v_0$. Chìa khóa là tìm hàm số của Vận tốc $v(\theta)$ và Lực căng dây $T(\theta)$, sau đó tìm điều kiện triệt tiêu của chúng.</p>
+
+            <div class="mb-8">
+                <h4 class="text-xl font-semibold text-gray-800 mt-4 mb-3 flex items-center"><span class="bg-indigo-100 text-indigo-800 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">1</span> Tìm $v(\theta)$ và $T(\theta)$</h4>
+                <ul class="space-y-4 text-gray-700 ml-4 border-l-2 border-indigo-200 pl-4">
+                    <li><strong class="font-semibold text-gray-900">Định lý động năng:</strong> Áp dụng từ vị trí thấp nhất ($\theta=0$) đến góc $\theta$. Độ cao vật đạt được là $h = l(1 - \cos\theta)$.
+                        <div class="math-block">$$ \frac{1}{2}mv^2 - \frac{1}{2}mv_0^2 = -mgh \Rightarrow v^2 = v_0^2 - 2gl(1 - \cos\theta) \quad (1) $$</div>
+                    </li>
+                    <li><strong class="font-semibold text-gray-900">Định luật II Newton:</strong> $\vec{P} + \vec{T} = m\vec{a}$. Chiếu lên phương pháp tuyến (hướng vào tâm $O$):
+                        <div class="math-block">$$ T - mg\cos\theta = m\frac{v^2}{l} \Rightarrow T = m\frac{v^2}{l} + mg\cos\theta \quad (2) $$</div>
+                    </li>
+                    <li>Thế (1) vào (2), ta có nguồn gốc của công thức $T$:
+                        <div class="math-block text-lg font-semibold text-indigo-900 bg-indigo-50 py-3 rounded">$$ T = m\left[ \frac{v_0^2}{l} + g(3\cos\theta - 2) \right] $$</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-semibold text-gray-800 mt-4 mb-3 flex items-center"><span class="bg-indigo-100 text-indigo-800 w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">2</span> Biện luận các trạng thái</h4>
+                <div class="space-y-4 mt-4">
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <strong class="text-green-800 text-lg">Trạng thái 1: Dao động con lắc (Chỉ đi lên rồi quay lại, dây luôn căng).</strong>
+                        <p class="mt-2 text-gray-700">Điều kiện: $v=0$ trước khi $T=0$. Vật dừng lại ở góc $\theta < \frac{\pi}{2}$ (vì $\theta \ge \frac{\pi}{2}$ thì $\cos\theta \le 0$, $T$ có nguy cơ âm).</p>
+                        <p class="mt-1 text-gray-700">Tại $v=0 \Rightarrow \cos\theta = 1 - \frac{v_0^2}{2gl}$. Để dây luôn căng, $\theta_{max} < 90^\circ \Rightarrow \cos\theta > 0 \Rightarrow 1 - \frac{v_0^2}{2gl} > 0 \Rightarrow \mathbf{v_0 < \sqrt{2gl}}$.</p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <strong class="text-yellow-800 text-lg">Trạng thái 2: Dây chùng (Rời quỹ đạo tròn thành ném xiên).</strong>
+                        <p class="mt-2 text-gray-700">Điều kiện: $T=0$ trong khi $v>0$. Xảy ra khi $\theta > \frac{\pi}{2}$.</p>
+                        <p class="mt-1 text-gray-700">Giải $T=0 \Rightarrow \cos\theta_T = \frac{2}{3} - \frac{v_0^2}{3gl}$.</p>
+                        <p class="mt-1 text-gray-700">Để hiện tượng này xảy ra, điểm chùng phải nằm nửa trên quỹ đạo: $-1 < \cos\theta_T < 0 \Rightarrow \mathbf{\sqrt{2gl} < v_0 < \sqrt{5gl}}$.</p>
+                    </div>
+
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <strong class="text-red-800 text-lg">Trạng thái 3: Quay tròn hoàn toàn.</strong>
+                        <p class="mt-2 text-gray-700">Điều kiện: Tại điểm cao nhất ($\theta = \pi, \cos\theta = -1$), dây vẫn căng ($T \ge 0$).</p>
+                        <p class="mt-1 text-gray-700">$T(\pi) = m\left[ \frac{v_0^2}{l} - 5g \right] \ge 0 \Rightarrow \mathbf{v_0 \ge \sqrt{5gl}}$.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- PHẦN 2 -->
+        <h2 id="phan2" class="text-3xl font-bold text-indigo-800 mt-16 mb-6 flex items-center">
+            <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            PHẦN 2: ĐỘNG LỰC HỌC CHẤT ĐIỂM TRONG TRƯỜNG ĐIỆN TỪ
+        </h2>
+        
+        <div class="bg-gray-800 text-white p-5 rounded-lg mb-8 shadow-md">
+            <span class="font-bold text-indigo-300 uppercase tracking-wider text-sm">Phương trình gốc</span>
+            <p class="mt-2 text-gray-300">Theo định luật II Newton và lực Lorentz:</p>
+            <div class="math-block text-2xl font-bold text-white">$$ m\frac{d\vec{v}}{dt} = q(\vec{E} + \vec{v} \times \vec{B}) $$</div>
+        </div>
+
+        <!-- Áp dụng 6 -->
+        <article class="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 section-card">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Áp dụng 6: Trường hợp $\vec{E} \parallel \vec{B}$</h3>
+            
+            <p class="mb-4 text-gray-700">Giả sử $\vec{E} = E\vec{k}$ và $\vec{B} = B\vec{k}$ (cùng hướng trục $Oz$). Vận tốc đầu $\vec{v}_0$ hợp với $Oz$ góc $\alpha$, nằm trong $(Oxz)$: $\vec{v}_0 = v_0\sin\alpha\,\vec{i} + v_0\cos\alpha\,\vec{k}$.</p>
+
+            <div class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">1. Phân tích vector và hệ phương trình vi phân</h4>
+                <p class="text-gray-700 mb-2">Tính tích có hướng: $\vec{v} \times \vec{B} = (\dot{x}\vec{i} + \dot{y}\vec{j} + \dot{z}\vec{k}) \times (B\vec{k}) = \dot{y}B\,\vec{i} - \dot{x}B\,\vec{j}$.</p>
+                <p class="text-gray-700 mb-2">Chiếu phương trình Newton lên 3 trục tọa độ, đặt $\omega = \frac{qB}{m}$ (tần số cyclotron):</p>
+                <div class="bg-gray-50 p-4 rounded font-mono text-sm overflow-x-auto border border-gray-200">
+                    <ul class="list-none space-y-2">
+                        <li>• $m\ddot{x} = qB\dot{y} \Rightarrow \ddot{x} = \omega\dot{y} \quad (1)$</li>
+                        <li>• $m\ddot{y} = -qB\dot{x} \Rightarrow \ddot{y} = -\omega\dot{x} \quad (2)$</li>
+                        <li>• $m\ddot{z} = qE \Rightarrow \ddot{z} = \frac{qE}{m} \quad (3)$</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold text-gray-800 mt-4 mb-2">2. Giải hệ phương trình <span class="text-sm font-normal text-gray-500 italic">(Theo phương pháp trên bảng của Giảng viên)</span></h4>
+                <ul class="space-y-4 text-gray-700 ml-4 border-l-2 border-indigo-200 pl-4 mt-4">
+                    <li><strong class="font-semibold text-gray-900">Theo trục $z$:</strong> Lấy nguyên hàm 2 lần phương trình (3) với điều kiện đầu $z(0)=0, \dot{z}(0) = v_0\cos\alpha$:
+                        <div class="math-block">$$ z(t) = \frac{1}{2}\frac{qE}{m}t^2 + (v_0\cos\alpha)t $$</div>
+                        <p class="text-sm italic text-gray-500 bg-gray-50 inline-block px-2 py-1 rounded">(Đây là chuyển động nhanh dần đều).</p>
+                    </li>
+                    <li class="mt-6"><strong class="font-semibold text-gray-900">Trên mặt phẳng $Oxy$:</strong> Đạo hàm hai vế phương trình (2) theo $t$:
+                        <p class="mt-2">$\dddot{y} = -\omega\ddot{x}$. Thế (1) vào: $\dddot{y} = -\omega(\omega\dot{y}) \Rightarrow \dddot{y} + \omega^2\dot{y} = 0$.</p>
+                        <p class="mt-2">Đây là phương trình dao động điều hòa của biến $V_y = \dot{y}$. Nghiệm có dạng: $\dot{y} = A\cos(\omega t + \varphi)$.</p>
+                        <p class="mt-2">Từ điều kiện ban đầu ($t=0: \dot{y}=0, \dot{x}=v_0\sin\alpha$), ta giải ra được hệ phương trình vận tốc, sau đó lấy nguyên hàm một lần nữa để ra tọa độ:</p>
+                        <div class="math-block text-lg bg-indigo-50 py-3 rounded mt-3">
+                            $$ x(t) = \frac{v_0\sin\alpha}{\omega} \left( 1 - \cos(\omega t) \right) $$<br>
+                            $$ y(t) = \frac{v_0\sin\alpha}{\omega} \sin(\omega t) $$
+                        </div>
+                        <div class="mt-4 bg-blue-50 text-blue-800 p-4 rounded-lg text-sm border-l-4 border-blue-500">
+                            <strong>Lưu ý:</strong> Slide bị lỗi typo thiếu dấu trừ ở phương trình $x(t)$. Quỹ đạo trên mp $Oxy$ là một đường tròn bán kính $R = \frac{v_0\sin\alpha}{\omega}$, dịch tâm đi một đoạn $R$ trên trục $Ox$. Kết hợp với trục $z$, quỹ đạo không gian là một <strong>đường đinh ốc có bước ốc dãn dần</strong>.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Áp dụng 7 -->
+        <article class="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 section-card">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Áp dụng 7: Trường hợp $\vec{E} \perp \vec{B}$ (Trường bắt chéo)</h3>
+            
+            <p class="mb-4 text-gray-700">Cho $\vec{E} = E\vec{j}$ (trục $y$) và $\vec{B} = B\vec{k}$ (trục $z$). Vận tốc đầu $\vec{v}_0 = 0$.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">1. Hệ phương trình vi phân</h4>
+                    <p class="text-gray-700 mb-2 text-sm">Tương tự như trên, $\vec{v} \times \vec{B} = \dot{y}B\,\vec{i} - \dot{x}B\,\vec{j}$. Chiếu lên các trục:</p>
+                    <div class="bg-gray-50 p-4 rounded font-mono text-sm border border-gray-200">
+                        <ul class="list-none space-y-2">
+                            <li>• $m\ddot{x} = qB\dot{y} \Rightarrow \ddot{x} = \omega\dot{y}$</li>
+                            <li>• $m\ddot{y} = qE - qB\dot{x} \Rightarrow \ddot{y} = \frac{qE}{m} - \omega\dot{x}$</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">2. Giải tích và Vận tốc trôi</h4>
+                    <p class="text-gray-700 mb-2 text-sm">Đặt vận tốc trôi dạt $v_D = \frac{E}{B}$. Ta có $\frac{qE}{m} = \frac{qB}{m}\frac{E}{B} = \omega v_D$. Hệ trở thành:</p>
+                    <p class="text-gray-700 mb-2 text-sm font-mono bg-gray-50 p-2 rounded">$\ddot{x} = \omega\dot{y}$ và $\ddot{y} = \omega(v_D - \dot{x})$</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <p class="text-gray-700 mb-4">Sử dụng phương pháp tương tự Áp dụng 6, đạo hàm và giải phương trình vi phân bậc 2, kết hợp điều kiện đầu ($x=y=0; \dot{x}=\dot{y}=0$ tại $t=0$), ta thu được:</p>
+                <div class="math-block text-lg bg-indigo-50 py-4 rounded">
+                    $$ x(t) = v_D t - \frac{v_D}{\omega}\sin(\omega t) = R_0(\omega t - \sin\omega t) $$<br>
+                    $$ y(t) = \frac{v_D}{\omega} (1 - \cos\omega t) = R_0(1 - \cos\omega t) $$
+                </div>
+                <p class="mt-4 text-gray-600 bg-gray-50 p-4 rounded border-l-4 border-gray-300">
+                    *(Với $R_0 = \frac{v_D}{\omega} = \frac{mE}{qB^2}$). Đây chính là phương trình tham số của đường <strong>Xyclôit (Cycloid)</strong> - quỹ đạo của một điểm trên vành bánh xe bán kính $R_0$ lăn không trượt dọc theo trục $Ox$ với vận tốc góc $\omega$.*
+                </p>
+            </div>
+        </article>
+
+        <!-- Áp dụng 9 -->
+        <article class="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 section-card">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Áp dụng 9: Phép đo $e/m$ của J.J. Thomson</h3>
+            
+            <p class="mb-6 text-gray-700">Đây là ứng dụng của trường điện từ bắt chéo để xác định tính chất hạt. Quá trình gồm 2 bước tư duy:</p>
+
+            <div class="space-y-6">
+                <div class="border border-gray-200 rounded-lg p-5">
+                    <h4 class="text-lg font-semibold text-indigo-700 mb-2">Bước 1: Cân bằng lực để tìm vận tốc $v_0$</h4>
+                    <p class="text-gray-700">Bật cả trường $\vec{E} \perp \vec{B}$. Chỉnh độ lớn sao cho chùm electron bay thẳng (không lệch).</p>
+                    <p class="text-gray-700 mt-2">Điều kiện: Tổng lực triệt tiêu $\vec{F}_d + \vec{F}_t = \vec{0} \Rightarrow eE = ev_0B$.</p>
+                    <p class="text-gray-700 font-medium mt-2">Từ đó đo được vận tốc chùm hạt: <span class="bg-indigo-50 px-2 py-1 rounded text-indigo-900">$v_0 = \frac{E}{B}$</span>.</p>
+                </div>
+
+                <div class="border border-gray-200 rounded-lg p-5">
+                    <h4 class="text-lg font-semibold text-indigo-700 mb-2">Bước 2: Lệch trong điện trường</h4>
+                    <p class="text-gray-700">Tắt từ trường $\vec{B}$, chùm hạt chỉ chịu tác dụng của lực điện $\vec{F}_d = -e\vec{E}$ (hướng lên trên nếu $E$ hướng xuống).</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1 text-gray-700">
+                        <li>Bài toán trở thành ném ngang. Thời gian bay qua tụ điện (chiều dài $a$): $t = \frac{a}{v_0}$.</li>
+                        <li>Gia tốc theo phương $y$: $a_y = \frac{F_d}{m} = \frac{eE}{m}$.</li>
+                    </ul>
+                    <p class="text-gray-700 mt-4 font-medium">Độ lệch dọc $y_1$ ngay khi ra khỏi tụ:</p>
+                    <div class="math-block">$$ y_1 = \frac{1}{2}a_y t^2 = \frac{1}{2}\left(\frac{eE}{m}\right)\left(\frac{a}{v_0}\right)^2 $$</div>
+                    
+                    <p class="text-gray-700 mt-4">Thay $v_0 = \frac{E}{B}$ vào và rút tỉ số $e/m$ ra:</p>
+                    <div class="math-block">$$ y_1 = \frac{1}{2}\frac{eE}{m}\frac{a^2B^2}{E^2} = \frac{1}{2}\frac{e}{m}\frac{a^2B^2}{E} $$</div>
+                    <div class="math-block text-xl font-bold bg-green-50 text-green-900 py-3 rounded border border-green-200 mt-2">$$ \Rightarrow \frac{e}{m} = \frac{2y_1 E}{a^2 B^2} $$</div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-yellow-50 text-yellow-800 p-4 rounded text-sm border-l-4 border-yellow-400">
+                <strong>Ghi chú:</strong> Trong tài liệu sách ảnh số 11, công thức $y_1$ được mở rộng thêm độ dịch chuyển tới màn ảnh cách một đoạn $b$, dùng hình học đồng dạng hoặc phương trình tiếp tuyến để cộng thêm độ lệch. Bản chất vi phân và động học cốt lõi nằm ở bước đi trong tụ được phân tích ở trên.
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+        <p>Báo cáo Vật lý Giải tích - Được tạo bởi Trợ lý AI</p>
+    </footer>
+
+</body>
+</html>
